@@ -1,0 +1,42 @@
+import random
+
+# Mapping: 1 for Rock (r), -1 for Paper (p), 0 for Scissor (s)
+computer = random.randint(-1, 1)
+youstr = input("Enter your choice (r, p, s): ").lower()
+
+# Dictionaries updated for shorthand
+youDist = {1: "Rock", -1: "Paper", 0: "Scissor"}
+charToNum = {"r": 1, "p": -1, "s": 0}
+
+if youstr not in charToNum:
+    print("Invalid choice! Please enter r, p, or s.")
+else:
+    you = charToNum[youstr]
+
+    print(f"You chose: {youDist[you]}\nComputer chose: {youDist[computer]}")
+
+    if computer == you:
+        print("It's a tie!")
+    else:
+        if ((computer - you)== -1 or (computer - you)== 2):
+                print("You lose!")
+        else:
+                print("You win!")
+        # Game Logic:
+        # r (1) beats s (0)
+        # s (0) beats p (-1)
+        # p (-1) beats r (1)
+        
+    ''' if (computer == -1 and you == 1):   
+            print("You Win!")
+        elif (computer == 1 and you == -1): 
+            print("You Lose!")
+        elif (computer == 0 and you == -1): 
+            print("You Win!")
+        elif (computer == -1 and you == 0): 
+            print("You Lose!")
+        elif (computer == 1 and you == 0):  
+            print("You Win!")
+        elif (computer == 0 and you == 1):  
+            print("You Lose!") '''
+       
